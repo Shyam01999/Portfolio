@@ -1,0 +1,117 @@
+/* module rule or reuseable component */
+.dark {
+  background-color: var(--dark-bg-color);
+  color: var(--light-bg-color);
+  transition: all 0.3s linear;
+}
+
+.light {
+  background-color: var(--light-bg-color);
+  color: var(--light-color);
+  transition: all 0.3s linear;
+}
+
+.container {
+  max-width: 142rem;
+  margin: 0 auto;
+  padding: 9.6rem 2.4rem;
+}
+
+button {
+  text-transform: capitalize;
+  padding: 1rem 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: var(--btn-color);
+  color: var(--bg-color);
+  border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-container{
+  background-color: var(--dark-bg-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15vw;
+  height: 100vh;
+}
+
+.menu-container.dark{
+  background-color: var(--light-bg-color);
+  transition: all 0.3s linear;
+}
+
+.cross-icon{
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  
+}
+
+.menu-container.light .cross-icon{
+  color: var(--light-bg-color);
+}
+
+.menu-container.dark .cross-icon{
+  color: var(--dark-bg-color);
+}
+
+/* media query css start */
+@media (width <= 1200px) {
+  html {
+    font-size: 56.25%;
+    /* 8px = 50% */
+  }
+}
+
+@media (width <= 992px) {
+  html {
+    font-size: 50% !important;
+    /* 8px = 50% */
+  }
+
+  .navbar {
+    display: none;
+    transition: all 0.3s linear;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  
+}
+
+@media (width <= 768px) {
+  html {
+    font-size: 43.75% !important;
+    /* 7px = 50% */
+  }
+}
+
+@media (width <= 576px) {
+  html {
+    font-size: 37.5% !important;
+    /* 6px = 50% */
+  }
+}
+/* media query css end */
