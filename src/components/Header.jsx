@@ -83,9 +83,26 @@ function Header() {
                     theme === "light" ? "light" : "dark"
                   }`}
                 >
-                  <span className="cross-icon" onClick={toggleMenu}>
-                    <RxCross2 />
-                  </span>
+                  <div>
+                    <span className="cross-icon" onClick={toggleMenu}>
+                      <RxCross2 />
+                    </span>
+                  </div>
+                  <div>
+                    <ul
+                      className={`menu-navbar ${
+                        theme === "light" ? "light" : "dark"
+                      }`}
+                    >
+                      {routes.map((item, index) => {
+                        return (
+                          <li key={index}>
+                            <NavLink to={item.path}>{item.name}</NavLink>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </div>
               )}
               <span onClick={toggleTheme} className="sun-icon">
