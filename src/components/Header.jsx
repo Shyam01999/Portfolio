@@ -1,5 +1,5 @@
-import React, { useState } from "react";  
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
 import { IoIosSunny } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
@@ -95,6 +95,7 @@ function Header() {
           </div>
         </div>
       </header>
+      <Outlet />
     </>
   );
 }

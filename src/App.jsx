@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-
-// import "react-toastify/dist/ReactToastify.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import "./styles/layout.css";
 import "./styles/module.css";
@@ -26,26 +23,18 @@ function App() {
   }, [theme]);
   return (
     <>
-      {/* <Header />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Services />
-      <Contact />
-      <NotFound /> */}
-
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Header />}>
+            <Route path="/" element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="skills" element={<Skills />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="services" element={<Services />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
