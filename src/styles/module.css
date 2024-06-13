@@ -17,6 +17,19 @@
   padding: 9.6rem 2.4rem;
 }
 
+.grid{
+  display: grid;
+}
+
+.grid-two-cols{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hero-section .container{
+  padding: 1.8rem 2.4rem;
+  gap: 2rem;
+}
+
 button {
   text-transform: capitalize;
   padding: 1rem 2.2rem;
