@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { notifySuccess } from "../constant/toastAlerts";
-import Typist from "react-typist";
-
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import profileImage from "../../public/images/profile_image.jpg";
+import { useSelector } from "react-redux";
+import resume from "../../public/images/Shyam Resume.pdf";
 function Home() {
+  const theme = useSelector((state) => state.themeReducer.theme);
+
   useEffect(() => {
     notifySuccess("Welcome to my portfolio app");
   }, []);
@@ -15,23 +19,25 @@ function Home() {
     "Full Stack Developer",
   ];
 
+  const [text] = useTypewriter({
+    words: designations,
+    loop: 0, // Infinite loop
+    delaySpeed: 2000,
+  });
+
   return (
     <>
       {/*Home Section*/}
       <section className="hero-section">
         <div className="container grid grid-two-cols">
-          <div className="hero-content">
+          <div
+            className={`hero-content ${theme === "light" ? "light" : "dark"}`}
+          >
             <p className="intro-greet">Hello My name is</p>
             <p className="name">Shyam Sundar Sahoo</p>
-            <p>
-              <Typist>
-                {designations.map((designation, index) => (
-                  <p key={index} className="designation">
-                    {designation}
-                    <Typist.Backspace count={designation.length} delay={2000} />
-                  </p>
-                ))}
-              </Typist>
+            <p className="designation">
+              {text}
+              <Cursor />
             </p>
             <p className="description">
               A Skilled web developer having 2 years of hands on experience on
@@ -41,8 +47,11 @@ function Home() {
             </p>
 
             <div className="button-container">
-              <span className="commonBtn">Let's talk</span>
-              <span className="commonBtn">Downlord CV</span>
+              <a href="https://wa.me/9337757671" target="_blank" rel="noopener noreferrer" className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
+              >
+                Let's talk
+              </a>
+              <a href={resume} download className={`commonBtn ${theme === "light" ? "light" : "dark"}`}>Download CV</a>
             </div>
             <div className="socialmedia-container">
               <a
@@ -72,7 +81,15 @@ function Home() {
               ></a>
             </div>
           </div>
-          <div className="hero-image"></div>
+          <div className="hero-image">
+            <div
+              className={`hero-image--cotainer ${
+                theme === "light" ? "light" : "dark"
+              }`}
+            >
+              <img src={profileImage} alt="Image not available" width="50%" />
+            </div>
+          </div>
         </div>
       </section>
     </>
