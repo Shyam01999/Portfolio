@@ -4,6 +4,15 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import profileImage from "../../public/images/profile_image.jpg";
 import { useSelector } from "react-redux";
 import resume from "../../public/images/Shyam Resume.pdf";
+import {
+  FaFacebook,
+  FaInstagramSquare,
+  FaLinkedin,
+  FaWhatsappSquare,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoIosMail } from "react-icons/io";
+
 function Home() {
   const theme = useSelector((state) => state.themeReducer.theme);
 
@@ -47,38 +56,58 @@ function Home() {
             </p>
 
             <div className="button-container">
-              <a href="https://wa.me/9337757671" target="_blank" rel="noopener noreferrer" className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
+              <a
+                href="https://wa.me/9337757671"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
               >
                 Let's talk
               </a>
-              <a href={resume} download className={`commonBtn ${theme === "light" ? "light" : "dark"}`}>Download CV</a>
+              <a
+                href={resume}
+                download
+                className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
+              >
+                Download CV
+              </a>
             </div>
             <div className="socialmedia-container">
               <a
                 href="https://www.facebook.com/login/"
                 target="blank"
                 className="socialmedia-icon fb"
-              ></a>
+              >
+                <FaFacebook />
+              </a>
               <a
                 href="https://www.instagram.com/accounts/login/?hl=en"
                 target="blank"
                 className="socialmedia-icon Instagram"
-              ></a>
-              <a
-                href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=ATuJsjxZG_EXDqxCgE3PA1zIfdLutExmd1dTaT6LdyyBm9isGyhfe58scA1RW-6HTpKuE8TtKQ1oEg&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-133768631%3A1709663265753499&theme=mn"
-                target="blank"
-                className="socialmedia-icon gmail"
-              ></a>
-              <a
-                href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Ffeed%2F&fromSignIn=true&trk=cold_join_sign_in"
-                target="blank"
-                className="socialmedia-icon linkedin"
-              ></a>
+              >
+                <FaInstagramSquare />
+              </a>
               <a
                 href="https://web.whatsapp.com/"
                 target="blank"
                 className="socialmedia-icon whatapp"
-              ></a>
+              >
+                <FaWhatsappSquare />
+              </a>
+              <a
+                href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=ATuJsjxZG_EXDqxCgE3PA1zIfdLutExmd1dTaT6LdyyBm9isGyhfe58scA1RW-6HTpKuE8TtKQ1oEg&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-133768631%3A1709663265753499&theme=mn"
+                target="blank"
+                className="socialmedia-icon gmail"
+              >
+                {/* <IoIosMail /> */}
+              </a>
+              <a
+                href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Ffeed%2F&fromSignIn=true&trk=cold_join_sign_in"
+                target="blank"
+                className="socialmedia-icon linkedin"
+              >
+                <FaLinkedin />
+              </a>
             </div>
           </div>
           <div className="hero-image">

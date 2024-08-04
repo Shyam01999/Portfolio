@@ -90,10 +90,8 @@
 }
 
 .mode-container {
-  display: flex;
-  gap: 1rem;
   font-size: 2rem;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   cursor: pointer;
   transition: all 0.3s linear;
 }
@@ -205,11 +203,11 @@
   width: 50%;
   height: auto;
   border-radius: 50%;
-  border: 1rem solid var(--brand-logo-color);
+  border: 0.7rem solid var(--brand-logo-color);
 }
 
 .hero-image--cotainer.dark img {
-  border: 1rem solid var(--logo-color);
+  border: 0.5rem solid var(--logo-color);
 }
 
 .profileImage {
@@ -247,53 +245,61 @@
 
 .socialmedia-container {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   gap: 2rem;
-  font-size: 2rem;
-  font-weight: 600;
+
   text-align: center;
 }
 
 .socialmedia-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  /* border: 0.2rem solid var(--logo-color); */
-  border-radius: 50%;
+  /* border-radius: 50%; */
   cursor: pointer;
+  font-size: 3rem;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .socialmedia-icon.fb {
-  background-image: url("../../public/images/facebook.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: var(--facebook-color);
 }
 
 .socialmedia-icon.Instagram {
-  background-image: url("../../public/images/instagram.jpg");
+  /* padding: 1.6rem;
+  background-image: url("../../public/images/instagram.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
+
+  color: var(--instagram-color);
 }
 
 .socialmedia-icon.gmail {
-  background-image: url("../../public/images/gmail.jpg");
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../../public/images/gmail.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+  margin-top: -0.4rem;
+  border-radius: 0.8rem;
 }
 
 .socialmedia-icon.linkedin {
-  background-image: url("../../public/images/linkedin.png");
+  /* background-image: url("../../public/images/linkedin.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
+  color: var(--linkedin-color);
 }
 
 .socialmedia-icon.whatapp {
-  background-image: url("../../public/images/whatapp.png");
+  /* background-image: url("../../public/images/whatapp.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
+  color: var(--whatsapp-color);
 }
 
 /* home section end */

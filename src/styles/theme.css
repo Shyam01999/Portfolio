@@ -3,11 +3,11 @@
   --light-bg-color: #fff;
   --light-color: #1f2544;
   --shadow-color: #3c3633;
-  --header-bg-color:#EEF7FF;
-  --brand-color:#1679AB;
-  --brand-logo-color:#074173;
-  --lightmode-icon-color :#FFFF80;
-  --dark-bg-color:#1f2544;
+  --header-bg-color: #eef7ff;
+  --brand-color: #1679ab;
+  --brand-logo-color: #074173;
+  --lightmode-icon-color: #ffff80;
+  --dark-bg-color: #1f2544;
 
   --bg-color: #1f242d;
   --text-color: #fff;
@@ -21,4 +21,9 @@
   --btn-color: #646cff;
   --menu-color: #2af598;
   --fb-logo: #0866ff;
+
+  --facebook-color: #316ff6;
+  --instagram-color:#EF00A2;
+  --whatsapp-color:#25D366;
+  --linkedin-color:#0072b1;
 }
