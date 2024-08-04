@@ -59,7 +59,7 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  width: 15vw;
+  width: 25vw;
   height: 100vh;
 }
 
@@ -69,11 +69,11 @@ button {
 }
 
 .cross-icon{
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   position: absolute;
   top: 1.5rem;
-  right: 2rem;
+  left: 2rem;
   
 }
 
@@ -85,46 +85,4 @@ button {
   color: var(--dark-bg-color);
 }
 
-/* media query css start */
-@media (width <= 1200px) {
-  html {
-    font-size: 56.25%;
-    /* 8px = 50% */
-  }
-}
 
-@media (width <= 992px) {
-  html {
-    font-size: 50% !important;
-    /* 8px = 50% */
-  }
-
-  .navbar {
-    display: none;
-    transition: all 0.3s linear;
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: auto;
-  }
-
-  
-}
-
-@media (width <= 768px) {
-  html {
-    font-size: 43.75% !important;
-    /* 7px = 50% */
-  }
-}
-
-@media (width <= 576px) {
-  html {
-    font-size: 37.5% !important;
-    /* 6px = 50% */
-  }
-}
-/* media query css end */

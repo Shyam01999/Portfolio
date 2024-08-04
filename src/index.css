@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Open+Sans:ital@0;1&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Open+Sans:ital@0;1&family=Permanent+Marker&display=swap");
 
+/* Base Rule start*/
 
 * {
   margin: 0;
@@ -11,10 +12,9 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* Base Rule */
 html {
   font-size: 62.5%; /*1rem = 10px */
 }
@@ -87,3 +87,109 @@ footer {
   /* width: 100%; */
 }
 
+/* Base Rule end*/
+
+/* media query css start */
+@media (width <= 1200px) {
+  html {
+    font-size: 56.25%;
+    /* 9px(56.25%) */
+  }
+}
+
+@media (width <= 992px) {
+  html {
+    font-size: 50%;
+    /* 8px(50%) */
+  }
+
+  .navbar {
+    display: none;
+    transition: all 0.3s linear;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  .mode-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .commonBtn.light {
+    width: 37%;
+  }
+
+  .commonBtn.dark {
+    width: 37%;
+  }
+}
+
+@media (width <= 768px) {
+  html {
+    font-size: 43.75%;
+    /* 7px(43.75%)*/
+  }
+
+  .grid-two-cols {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    transform: all o.3s linear;
+  }
+
+  .hero-image--cotainer img {
+    width: 40%;
+  }
+
+  .hero-image {
+    order: 1; /* Make hero-image appear first */
+  }
+
+  .hero-content {
+    order: 2; /* Make hero-content appear second */
+  }
+}
+
+@media (width <= 576px) {
+  html {
+    font-size: 37.5% !important;
+    /* 6px(37.5%) */
+  }
+
+  .hero-image--cotainer img {
+    width: 70%;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1.8rem;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+
+  .socialmedia-container {
+    justify-content: center;
+  }
+
+  .menu-container {
+    width: 35vw;
+  }
+
+  .mode-container .menu-navbar {
+    align-items: flex-start;
+    margin: 7rem 4rem;
+  }
+
+  .mode-container .menu-navbar li a {
+    font-size: 2.4rem;
+  }
+}
+/* media query css end */

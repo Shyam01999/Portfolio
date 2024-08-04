@@ -235,12 +235,12 @@
 .commonBtn.light {
   border: 0.1rem solid var(--brand-logo-color);
   color: var(--brand-color);
-  width: 28%;
+  width: 34%;
 }
 
 .commonBtn.dark {
   border: 0.1rem solid var(--logo-color);
-  width: 28%;
+  width: 34%;
 }
 
 .socialmedia-container {
