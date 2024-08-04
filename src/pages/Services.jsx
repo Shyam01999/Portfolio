@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-function Services() {
-  return (
-    <h1>Services page</h1>
-  )
+function Services({ setProgress }) {
+  useEffect(() => {
+    setProgress(20);
+    setTimeout(() => {
+      setProgress(100);
+    }, 1000);
+    // notifySuccess("Welcome to my portfolio app");
+  }, [setProgress]);
+
+  return <h1>Services page</h1>;
 }
 
-export default Services
+export default Services;

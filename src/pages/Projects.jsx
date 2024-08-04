@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-function Projects() {
-  return (
-    <h1>Projects page</h1>
-  )
+function Projects({ setProgress }) {
+
+  useEffect(() => {
+    setProgress(20);
+    setTimeout(() => {
+      setProgress(100);
+    }, 1000);
+    // notifySuccess("Welcome to my portfolio app");
+  }, [setProgress]);
+
+  return <h1>Projects page</h1>;
 }
 
-export default Projects
+export default Projects;

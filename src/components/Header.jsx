@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
 import { IoIosSunny } from "react-icons/io";
@@ -7,8 +7,16 @@ import { TOGGLE_THEME } from "../redux/actionTypes/theme.actionTypes";
 import { LuMenu } from "react-icons/lu";
 import { RxCross2 } from "react-icons/rx";
 
-function Header() {
+function Header({ setProgress }) {
   const theme = useSelector((state) => state.themeReducer.theme);
+
+  useEffect(() => {
+    setProgress(20);
+    setTimeout(() => {
+      setProgress(100);
+    }, 1000);
+    // notifySuccess("Welcome to my portfolio app");
+  }, [setProgress]);
 
   const [menu, setMenu] = useState(false);
   const dispatch = useDispatch();

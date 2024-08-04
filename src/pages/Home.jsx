@@ -13,12 +13,16 @@ import {
 import { MdEmail } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
 
-function Home() {
+function Home({ setProgress }) {
   const theme = useSelector((state) => state.themeReducer.theme);
 
   useEffect(() => {
-    notifySuccess("Welcome to my portfolio app");
-  }, []);
+    setProgress(20);
+    setTimeout(() => {
+      setProgress(100);
+    }, 1000);
+    // notifySuccess("Welcome to my portfolio app");
+  }, [setProgress]);
 
   const designations = [
     "Web Developer",
