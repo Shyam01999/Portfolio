@@ -1,9 +1,42 @@
-/* layout rule */
+/* Theme Rule start*/
+:root {
+  --light-bg-color: #fff;
+  --light-color: #1f2544;
+  --shadow-color: #3c3633;
+  --header-bg-color: #eef7ff;
+  --brand-color: #1679ab;
+  --brand-logo-color: #074173;
+  --lightmode-icon-color: #ffff80;
+  --dark-bg-color: #1f2544;
+
+  --bg-color: #1f242d;
+  --text-color: #fff;
+  --logo-color: #12d8fa;
+  --main-color: linear-gradient(
+    to right,
+    #1fa2ff 0%,
+    #12d8fa 51%,
+    #1fa2ff 100%
+  );
+  --btn-color: #646cff;
+  --menu-color: #2af598;
+  --fb-logo: #0866ff;
+
+  --facebook-color: #316ff6;
+  --instagram-color: #ef00a2;
+  --whatsapp-color: #25d366;
+  --linkedin-color: #0072b1;
+}
+
+/* Theme Rule end*/
+
+/* layout rule start*/
+
 /* Header css start */
 .header {
   background: var(--header-bg-color);
   box-shadow: 0px 0px 2.5px 0px var(--shadow-color);
-  position: relative;
+  /* position: relative; */
 }
 
 .header.dark {
@@ -132,8 +165,6 @@
 /* Header css end */
 
 /* home section start */
-/* .hero-section {
-} */
 #intro {
   display: flex;
   justify-content: space-between;
@@ -177,7 +208,6 @@
   line-height: 1.5;
   height: 0.5rem;
   margin: 2rem 0rem;
-  /* color: var(--logo-color); */
 }
 
 .description {
@@ -218,7 +248,7 @@
 .button-container {
   display: flex;
   gap: 2rem;
-  margin: 2rem 0rem;
+  margin: 3rem 0rem;
 }
 
 .commonBtn {
@@ -253,12 +283,8 @@
 }
 
 .socialmedia-icon {
-  /* border-radius: 50%; */
   cursor: pointer;
   font-size: 3rem;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .socialmedia-icon.fb {
@@ -266,12 +292,6 @@
 }
 
 .socialmedia-icon.Instagram {
-  /* padding: 1.6rem;
-  background-image: url("../../public/images/instagram.webp");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center; */
-
   color: var(--instagram-color);
 }
 
@@ -287,19 +307,157 @@
 }
 
 .socialmedia-icon.linkedin {
-  /* background-image: url("../../public/images/linkedin.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center; */
   color: var(--linkedin-color);
 }
 
 .socialmedia-icon.whatapp {
-  /* background-image: url("../../public/images/whatapp.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center; */
   color: var(--whatsapp-color);
 }
 
 /* home section end */
+
+/* About section css start */
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.about-content .description{
+  font-size: 1.6rem;
+  margin: 3rem 0 3rem 0rem;
+}
+
+.listitem {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listitem li{
+  font-size: 1.5rem;
+}
+
+
+/* About section css end */
+
+/* layout rule end*/
+
+/* module rule or reuseable component start*/
+.dark {
+  background-color: var(--dark-bg-color);
+  color: var(--light-bg-color);
+  transition: all 0.3s linear;
+}
+
+.light {
+  background-color: var(--light-bg-color);
+  color: var(--light-color);
+  transition: all 0.3s linear;
+}
+
+.container {
+  max-width: 142rem;
+  margin: 0 auto;
+  padding: 9.6rem 2.4rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hero-section .container,
+.about-section .container {
+  padding: 6rem 2.4rem;
+  gap: 2rem;
+}
+
+button {
+  text-transform: capitalize;
+  padding: 1rem 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: var(--btn-color);
+  color: var(--bg-color);
+  border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-container {
+  background-color: var(--dark-bg-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+}
+
+.menu-container.dark {
+  background-color: var(--light-bg-color);
+  transition: all 0.3s linear;
+}
+
+.cross-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+.menu-container.light .cross-icon {
+  color: var(--light-bg-color);
+}
+
+.menu-container.dark .cross-icon {
+  color: var(--dark-bg-color);
+}
+
+/* module rule or reuseable component end*/
+
+/* states rule start*/
+button:hover {
+  box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  bottom: 0;
+  width: 0;
+  height: 0.1rem;
+  background-color: var(--brand-logo-color);
+  transition: width 0.3s linear;
+}
+
+.navbar.dark li ::after {
+  background-color: var(--logo-color);
+  transition: width 0.3s linear;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+}
+
+/* states rule end*/

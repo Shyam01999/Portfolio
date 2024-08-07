@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import "./styles/layout.css";
-import "./styles/module.css";
-import "./styles/theme.css";
-import "./styles/states.css";
+import "./styles/style.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import Home from "./pages/Home";
