@@ -322,7 +322,7 @@
   font-weight: 600;
 }
 
-.about-content .description{
+.about-content .description {
   font-size: 1.6rem;
   margin: 3rem 0 3rem 0rem;
 }
@@ -332,12 +332,38 @@
   gap: 1rem;
 }
 
-.listitem li{
+.listitem li {
   font-size: 1.5rem;
 }
 
-
 /* About section css end */
+
+/* Skills section css start */
+.skills-card {
+  width: 50%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 0px var(--shadow-color);
+  transition: all linear 0.4s;
+  
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  
+
+}
+/* Skills section css end */
 
 /* layout rule end*/
 
@@ -368,10 +394,19 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid-three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .hero-section .container,
-.about-section .container {
+.about-section .container,
+.skills-section .container {
   padding: 6rem 2.4rem;
   gap: 2rem;
+}
+
+.hero-section .container {
+  padding: 9.6rem 2.4rem;
 }
 
 button {
@@ -458,6 +493,11 @@ button:hover {
 
 .navbar li a:hover::after {
   width: 100%;
+}
+
+.skills-card:hover{
+  scale: 1.1;
+  
 }
 
 /* states rule end*/

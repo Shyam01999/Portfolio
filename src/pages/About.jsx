@@ -25,7 +25,9 @@ function About({ setProgress }) {
             <img src={profileImage} alt="Image not available" width="50%" />
           </div>
         </div>
-        <div className={`about-content ${theme === "light" ? "light" : "dark"}`}>
+        <div
+          className={`about-content ${theme === "light" ? "light" : "dark"}`}
+        >
           <h2 className="title">About Me</h2>
           <p className="description">
             Dedicated web developer with a creative flair for developing
@@ -53,15 +55,15 @@ function About({ setProgress }) {
             </li>
           </ul>
           <div className="button-container">
-              <a
-                href="https://wa.me/9337757671"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
-              >
-                Contact Me
-              </a>
-            </div>
+            <a
+              href="https://wa.me/9337757671"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`commonBtn ${theme === "light" ? "light" : "dark"}`}
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
       </div>
     </section>
