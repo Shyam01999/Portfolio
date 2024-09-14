@@ -351,7 +351,6 @@
   border-radius: 0.5rem;
   box-shadow: 0px 1px 3px 0px var(--shadow-color);
   transition: all linear 0.4s;
-  
 
   & img {
     width: 100%;
@@ -360,8 +359,9 @@
     border-radius: 0.5rem;
   }
 
-  
-
+  & h2 {
+    font-size: 2rem;
+  }
 }
 /* Skills section css end */
 
@@ -495,9 +495,8 @@ button:hover {
   width: 100%;
 }
 
-.skills-card:hover{
+.skills-card:hover {
   scale: 1.1;
-  
 }
 
 /* states rule end*/
