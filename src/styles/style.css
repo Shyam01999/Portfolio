@@ -409,6 +409,15 @@
   padding: 9.6rem 2.4rem;
 }
 
+.common-title-container{
+  text-align: center;
+}
+
+.container .cards{
+  padding: 6rem 2.4rem;
+  gap: 2rem;
+}
+
 button {
   text-transform: capitalize;
   padding: 1rem 2.2rem;
