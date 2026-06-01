@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Services from "./pages/Services";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBar from "react-top-loading-bar";
+import Education from "./pages/Education";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -34,10 +35,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Header setProgress={setProgress} />}>
             <Route path="/" element={<Home setProgress={setProgress} />} />
-            <Route path="home" element={<Home setProgress={setProgress} />} />
+            
             <Route path="about" element={<About setProgress={setProgress} />} />
             <Route path="skills" element={<Skills setProgress={setProgress} />}/>
             <Route path="projects" element={<Projects setProgress={setProgress} />} />
+            <Route path="education" element={<Education setProgress={setProgress} />} />
             <Route path="services" element={<Services setProgress={setProgress} />}/>
             <Route path="contact" element={<Contact setProgress={setProgress} />}
             />

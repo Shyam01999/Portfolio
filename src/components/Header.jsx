@@ -21,10 +21,7 @@ function Header({ setProgress }) {
   const [menu, setMenu] = useState(false);
   const dispatch = useDispatch();
   const routes = [
-    {
-      path: "/home",
-      name: "Home",
-    },
+    
     {
       path: "/about",
       name: "About",
@@ -40,6 +37,10 @@ function Header({ setProgress }) {
     {
       path: "/services",
       name: "Services",
+    },
+    {
+      path: "/education",
+      name: "Education",
     },
     {
       path: "/contact",

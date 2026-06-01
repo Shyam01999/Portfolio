@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import profileImage from "../../public/images/profile_image.jpg";
+import profileImage from "../../public/images/Shyam_Photo_2.png";
 import { useSelector } from "react-redux";
 
 function About({ setProgress }) {

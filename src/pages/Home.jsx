@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { notifySuccess } from "../constant/toastAlerts";
+import { useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import profileImage from "../../public/images/profile_image.jpg";
+import profileImage from "../../public/images/Shyam_Photo_3.png";
 import { useSelector } from "react-redux";
-import resume from "../../public/images/Shyam Resume.pdf";
+import resume from "../../public/images/Shyam_Resume.pdf";
 import {
   FaFacebook,
   FaInstagramSquare,
   FaLinkedin,
   FaWhatsappSquare,
 } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
+// import { FaFacebook, FaInstagramSquare, FaWhatsappSquare, FaLinkedin } from "react-icons/fa";
+// import { IoIosMail } from "react-icons/io";
 
 function Home({ setProgress }) {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -26,10 +26,49 @@ function Home({ setProgress }) {
 
   const designations = [
     "Web Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "MERN Stack Developer",
+    "Frontend Engineer",
+    "Backend Engineer",
+    "MERN Stack Engineer",
+    "PERN Stack Engineer",
     "Full Stack Developer",
+  ];
+
+  const summary = `A passionate Full Stack Engineer with 3+ years of experience
+building end-to-end web applications using the MERN & PERN stack.
+I specialize in developing robust backends, intuitive frontends,
+and turning complex problems into clean, efficient solutions.`;
+
+  const socialLinks = [
+    {
+      id: 1,
+      href: "https://www.facebook.com/your.username",
+      icon: <FaFacebook />,
+      className: "fb",
+    },
+    {
+      id: 2,
+      href: "https://www.instagram.com/your.username",
+      icon: <FaInstagramSquare />,
+      className: "instagram",
+    },
+    {
+      id: 3,
+      href: "https://wa.me/91XXXXXXXXXX",
+      icon: <FaWhatsappSquare />,
+      className: "whatsapp",
+    },
+    {
+      id: 4,
+      href: "mailto:yourname@gmail.com",
+      icon: <IoIosMail />,
+      className: "gmail",
+    },
+    {
+      id: 5,
+      href: "https://www.linkedin.com/in/your-username",
+      icon: <FaLinkedin />,
+      className: "linkedin",
+    },
   ];
 
   const [text] = useTypewriter({
@@ -53,10 +92,7 @@ function Home({ setProgress }) {
               <Cursor />
             </p>
             <p className="description">
-              A Skilled web developer having 2 years of hands on experience on
-              frontend and backend developement who craft captivating user
-              experience with code. My passion for innovation drives my quest
-              for pixel perfect designs.
+              {summary}
             </p>
 
             <div className="button-container">
@@ -77,7 +113,7 @@ function Home({ setProgress }) {
               </a>
             </div>
             <div className="socialmedia-container">
-              <a
+              {/* <a
                 href="https://www.facebook.com/login/"
                 target="blank"
                 className="socialmedia-icon fb"
@@ -103,7 +139,7 @@ function Home({ setProgress }) {
                 target="blank"
                 className="socialmedia-icon gmail"
               >
-                {/* <IoIosMail /> */}
+               
               </a>
               <a
                 href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Ffeed%2F&fromSignIn=true&trk=cold_join_sign_in"
@@ -111,20 +147,31 @@ function Home({ setProgress }) {
                 className="socialmedia-icon linkedin"
               >
                 <FaLinkedin />
-              </a>
+              </a> */}
+
+              {socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`socialmedia-icon ${social.className}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
           <div className="hero-image">
             <div
-              className={`hero-image--cotainer ${
-                theme === "light" ? "light" : "dark"
-              }`}
+              className={`hero-image--cotainer ${theme === "light" ? "light" : "dark"
+                }`}
             >
               <img src={profileImage} alt="Image not available" width="50%" />
             </div>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
