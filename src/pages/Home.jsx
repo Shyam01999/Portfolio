@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import profileImage from "../../public/images/Shyam_Photo_3.png";
 import { useSelector } from "react-redux";
-import resume from "../../public/images/Shyam_Resume.pdf";
+import resume from "../../public/documents/Shyam_Software_Developer_4+YOE_Resume.pdf";
 import {
   FaFacebook,
   FaInstagramSquare,
@@ -31,41 +31,39 @@ function Home({ setProgress }) {
     "MERN Stack Engineer",
     "PERN Stack Engineer",
     "Full Stack Developer",
+    "DevOps Engineer"
   ];
 
-  const summary = `A passionate Full Stack Engineer with 3+ years of experience
-building end-to-end web applications using the MERN & PERN stack.
-I specialize in developing robust backends, intuitive frontends,
-and turning complex problems into clean, efficient solutions.`;
+  const summary = `A passionate Full Stack Engineer with 4+ years of experience building end-to-end web applications using the MERN & PERN stack. I specialize in developing robust backends, intuitive frontends, and turning complex problems into clean, efficient solutions.`;
 
   const socialLinks = [
     {
       id: 1,
-      href: "https://www.facebook.com/your.username",
+      href: "https://www.facebook.com/shyamsundar.sahoo.161?rdid=9Elh1TLUCTjeWbqv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DppWWXNqn%2F#",
       icon: <FaFacebook />,
       className: "fb",
     },
     {
       id: 2,
-      href: "https://www.instagram.com/your.username",
+      href: "https://www.instagram.com/shyam_sundar.08/",
       icon: <FaInstagramSquare />,
       className: "instagram",
     },
     {
       id: 3,
-      href: "https://wa.me/91XXXXXXXXXX",
+      href: "https://wa.me/919337757671",
       icon: <FaWhatsappSquare />,
       className: "whatsapp",
     },
     {
       id: 4,
-      href: "mailto:yourname@gmail.com",
+      href: "mailto:shyamsundarsahooo1998@gmail.com",
       icon: <IoIosMail />,
       className: "gmail",
     },
     {
       id: 5,
-      href: "https://www.linkedin.com/in/your-username",
+      href: "https://www.linkedin.com/in/shyamsundarsahoo/",
       icon: <FaLinkedin />,
       className: "linkedin",
     },
@@ -82,9 +80,7 @@ and turning complex problems into clean, efficient solutions.`;
       {/*Home Section*/}
       <section className="hero-section">
         <div className="container grid grid-two-cols">
-          <div
-            className={`hero-content ${theme === "light" ? "light" : "dark"}`}
-          >
+          <div className={`hero-content ${theme === "light" ? "light" : "dark"}`} >
             <p className="intro-greet">Hello My name is</p>
             <p className="name">Shyam Sundar Sahoo</p>
             <p className="designation">
@@ -97,7 +93,7 @@ and turning complex problems into clean, efficient solutions.`;
 
             <div className="button-container">
               <a
-                href="https://wa.me/9337757671"
+                href="https://wa.me/919337757671"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`commonBtn ${theme === "light" ? "light" : "dark"}`}

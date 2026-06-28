@@ -21,14 +21,14 @@ import githubactionimage from "../../public/images/github_actions.webp";
 import linuximage from "../../public/images/linux-logo.webp";
 import dockerimage from "../../public/images/docker-logo.webp";
 
-import nginximage from "../../public/images/nginx image.png";
+import nginximage from "../../public/images/nginx-logo.webp";
 // import awsimage from "../../public/images/";
 // import digitaloceanimage from "../../public/images/";
-import pm2image from "../../public/images/pm2 image.png";
+import pm2image from "../../public/images/pm2-logo.webp";
 
-import postmanimage from "../../public/images/postman image.png";
-import vscodeimage from "../../public/images/vs code image.jpg";
-import upcommingimage from "../../public/images/upcoming image.png";
+import postmanimage from "../../public/images/postman-logo.webp";
+import vscodeimage from "../../public/images/vscode-logo.webp";
+import upcommingimage from "../../public/images/upcoming-logo.webp";
 
 export const frontend = [
     { id: 1, logo: htmlimage, name: "HTML" },
