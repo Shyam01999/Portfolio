@@ -38,6 +38,7 @@
   --muted: #7a7a9a;
   --bg: #0d0d14;
   --surface: #15151f;
+  --danger-color: rgba(242, 11, 11, 0.958);
 }
 
 /* Theme Rule end*/
@@ -546,7 +547,6 @@
 }
 
 .contact-card {
-  background: #111f35;
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 14px;
   border-top: 3px solid #00d4ff;
@@ -554,14 +554,12 @@
 }
 
 .contact-title {
-  color: #fff;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .contact-description {
-  color: rgba(255, 255, 255, 0.45);
   font-size: 12px;
   line-height: 1.7;
 }
@@ -570,17 +568,16 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #111f35;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 12px 14px;
+  border: 1px solid rgba(0, 212, 255, 0.15);
 }
 
 .contact-icon {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--icon-color) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--icon-color) 20%, transparent);
   display: flex;
   align-items: center;
@@ -590,17 +587,14 @@
 
 .contact-label {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
 }
 
 .contact-value {
   font-size: 13px;
-  color: #fff;
   font-weight: 600;
 }
 
 .contact-form-card {
-  background: #111f35;
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 14px;
   border-top: 3px solid #00d4ff;
@@ -626,17 +620,15 @@
 
 .contact-form-label {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
 }
 
 .contact-form-input,
 .contact-form-textarea {
-  background: #0d1b2e;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 8px;
+  border: 1px solid rgba(0, 213, 255, 0.476);
   padding: 10px 12px;
-  color: #fff;
   font-size: 13px;
   outline: none;
   font-family: inherit;
@@ -655,7 +647,7 @@
 
 .contact-form-input::placeholder,
 .contact-form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(42, 38, 38, 0.35);
 }
 
 .contact-form-button {
@@ -678,6 +670,10 @@
 
 .contact-form-button:active {
   transform: translateY(0);
+}
+
+.required-icon{
+  color: var(--danger-color);
 }
 
 /* Contact section css end */

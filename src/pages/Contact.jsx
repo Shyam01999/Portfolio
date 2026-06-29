@@ -1,7 +1,41 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import emailjs from "@emailjs/browser";
 
 function Contact({ setProgress }) {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  //redux
+  const theme = useSelector((state) => state.themeReducer.theme);
+  const initialData = { name: "", email: "", subject: "", message: "" }
+  const [form, setForm] = useState(initialData);
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  console.log("serviceId", serviceId);
+  console.log("templateId", templateId);
+  console.log("publicKey", publicKey)
+
+  const contactInfo = [
+    {
+      icon: "📧",
+      label: "Email",
+      val: "shyamsundarsahoo1998@gmail.com",
+      color: "#00d4ff",
+    },
+    {
+      icon: "📞",
+      label: "Phone",
+      val: "+91 9337757671",
+      color: "#a78bfa",
+    },
+    {
+      icon: "📍",
+      label: "Location",
+      val: "Dhenkanal, Odisha",
+      color: "#38bdf8",
+    },
+  ]
 
   useEffect(() => {
     setProgress(20);
@@ -13,12 +47,32 @@ function Contact({ setProgress }) {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(form); // wire up EmailJS or your backend here
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        publicKey
+      );
+
+      alert("Message sent successfully!");
+
+      setForm(initialData);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Failed to send message.");
+    }
   };
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className={`contact-section ${theme === "light" ? "light" : "dark"}`}>
       <div>
 
         <div className="common-title-container">
@@ -30,35 +84,16 @@ function Contact({ setProgress }) {
         <div className="container grid grid-two-cols">
 
           {/* Left: Info */}
-          <div className="contact-info">
-            <div className="contact-card">
-              <h3 className="contact-title">Let's talk</h3>
-              <p className="contact-description">
+          <div className={`contact-info`}>
+            <div className={`contact-card`}>
+              <h3 className={`contact-title`}>Let's talk</h3>
+              <p className={`contact-description`}>
                 Open to freelance, full-time roles, and collaborations. Reach out anytime!
               </p>
             </div>
 
-            {[
-              {
-                icon: "📧",
-                label: "Email",
-                val: "shyamsundarsahoo1998@gmail.com",
-                color: "#00d4ff",
-              },
-              {
-                icon: "📞",
-                label: "Phone",
-                val: "+91 9337757671",
-                color: "#a78bfa",
-              },
-              {
-                icon: "📍",
-                label: "Location",
-                val: "Dhenkanal, Odisha",
-                color: "#38bdf8",
-              },
-            ].map(({ icon, label, val, color }) => (
-              <div className="contact-item" key={label}>
+            {contactInfo.map(({ icon, label, val, color }) => (
+              <div className={`contact-item`} key={label}>
                 <div
                   className="contact-icon"
                   style={{
@@ -69,28 +104,30 @@ function Contact({ setProgress }) {
                 </div>
 
                 <div>
-                  <div className="contact-label">{label}</div>
-                  <div className="contact-value">{val}</div>
+                  <div className={`contact-label`}>{label}</div>
+                  <div className={`contact-value`}>{val}</div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Right: Form */}
-          <div className="contact-form-card">
+          <form className={`contact-form-card ${theme === "light" ? "light" : "dark"}`} onSubmit={handleSubmit}>
             <div className="contact-form-grid">
               {["name", "email"].map((field) => (
                 <div className="contact-form-group" key={field}>
                   <label className="contact-form-label">
-                    {field === "name" ? "Your name" : "Email address"}
+                    {field === "name" ? "Your name" : "Email address"} <span className="required-icon">*</span>
                   </label>
 
                   <input
+                    type={field === "name" ? "text" : "email"}
                     className="contact-form-input"
                     name={field}
                     value={form[field]}
                     onChange={handleChange}
                     placeholder={field === "name" ? "John Doe" : "john@mail.com"}
+                    required={true}
                   />
                 </div>
               ))}
@@ -99,7 +136,7 @@ function Contact({ setProgress }) {
             {["subject", "message"].map((field) => (
               <div className="contact-form-group contact-form-margin" key={field}>
                 <label className="contact-form-label">
-                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                  {field.charAt(0).toUpperCase() + field.slice(1)} <span className="required-icon">*</span>
                 </label>
 
                 {field === "message" ? (
@@ -110,6 +147,7 @@ function Contact({ setProgress }) {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Tell me about your project..."
+                    required={true}
                   />
                 ) : (
                   <input
@@ -118,15 +156,16 @@ function Contact({ setProgress }) {
                     value={form[field]}
                     onChange={handleChange}
                     placeholder="Project / Collaboration / Job"
+                    required={true}
                   />
                 )}
               </div>
             ))}
 
-            <button className="contact-form-button" onClick={handleSubmit}>
+            <button type={"submit"} className="contact-form-button">
               Send Message →
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </section>
