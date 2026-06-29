@@ -35,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Header setProgress={setProgress} />}>
             <Route path="/" element={<Home setProgress={setProgress} />} />
-            
+            <Route path="/Portfolio" element={<Home setProgress={setProgress} />} />
             <Route path="about" element={<About setProgress={setProgress} />} />
             <Route path="skills" element={<Skills setProgress={setProgress} />}/>
             <Route path="projects" element={<Projects setProgress={setProgress} />} />
