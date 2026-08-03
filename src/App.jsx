@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import "./styles/style.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./components/NotFound";
@@ -13,6 +12,7 @@ import Services from "./pages/Services";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBar from "react-top-loading-bar";
 import Education from "./pages/Education";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -32,21 +32,18 @@ function App() {
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
+
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Header setProgress={setProgress} />}>
-            <Route path="/" element={<Home setProgress={setProgress} />} />
-            <Route path="/Portfolio" element={<Home setProgress={setProgress} />} />
-            <Route path="about" element={<About setProgress={setProgress} />} />
-            <Route path="skills" element={<Skills setProgress={setProgress} />}/>
-            <Route path="projects" element={<Projects setProgress={setProgress} />} />
-            <Route path="education" element={<Education setProgress={setProgress} />} />
-            <Route path="services" element={<Services setProgress={setProgress} />}/>
-            <Route path="contact" element={<Contact setProgress={setProgress} />}
-            />
-            <Route path="*" element={<NotFound setProgress={setProgress} />} />
-          </Route>
+
+          <Route path="/" element={<>
+            <Header setProgress={setProgress} />
+            <Home setProgress={setProgress} />
+          </>}
+          />
+          <Route path="*" element={<NotFound setProgress={setProgress} />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter >
     </>
   );
 }

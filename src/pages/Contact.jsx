@@ -72,8 +72,8 @@ function Contact({ setProgress }) {
     }
   };
   return (
-    <section id="contact" className={`contact-section ${theme === "light" ? "light" : "dark"}`}>
-      <div>
+    <section className={`contact-section`}>
+      <div className="container contact-cards">
 
         <div className="common-title-container">
           <h2 className="title">Get In <span className='section-name'>Touch</span></h2>
@@ -81,7 +81,7 @@ function Contact({ setProgress }) {
           <p className="sub-tittle">Have a project in mind? Let's build something great together.</p>
         </div>
 
-        <div className="container grid grid-two-cols">
+        <div className="cards grid grid-two-cols">
 
           {/* Left: Info */}
           <div className={`contact-info`}>

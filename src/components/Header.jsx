@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
 import { IoIosSunny } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,31 +19,33 @@ function Header({ setProgress }) {
   }, [setProgress]);
 
   const [menu, setMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
   const dispatch = useDispatch();
   const routes = [
-    
+
     {
-      path: "/about",
+      path: "about",
       name: "About",
     },
     {
-      path: "/skills",
+      path: "skills",
       name: "Skills",
     },
     {
-      path: "/projects",
+      path: "projects",
       name: "Projects",
     },
     {
-      path: "/services",
+      path: "services",
       name: "Services",
     },
     {
-      path: "/education",
+      path: "education",
       name: "Education",
     },
     {
-      path: "/contact",
+      path: "contact",
       name: "Contact",
     },
   ];
@@ -55,6 +57,46 @@ function Header({ setProgress }) {
   const toggleMenu = () => {
     setMenu(!menu);
   };
+
+  const scrollTo = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      window.history.replaceState({}, "", `#${id}`);
+      setActiveSection(id);
+    }
+
+    setMenu(false);
+  };
+
+
+  // useEffect(() => {
+  //   const sections = document.querySelectorAll("section");
+
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           setActiveSection(entry.target.id);
+  //         }
+  //       });
+  //     },
+  //     {
+  //       threshold: 0.6,
+  //     }
+  //   );
+
+  //   sections.forEach((section) => observer.observe(section));
+
+  //   return () => observer.disconnect();
+  // }, []);
+
+
   return (
     <>
       <header className={`header ${theme === "light" ? "light" : "dark"}`}>
@@ -71,26 +113,33 @@ function Header({ setProgress }) {
               <ul className={`navbar ${theme === "light" ? "light" : "dark"}`}>
                 {routes.map((item, index) => {
                   return (
+                    // <li key={index}>
+                    //   <NavLink to={item.path}>{item.name}</NavLink>
+                    // </li>
+
                     <li key={index}>
-                      <NavLink to={item.path}>{item.name}</NavLink>
+                      <a
+                        onClick={() => scrollTo(item.path)}
+                        className={activeSection === item.path ? "active" : ""}
+                      >
+                        {item.name}
+                      </a>
                     </li>
                   );
                 })}
               </ul>
             </nav>
             <div
-              className={`mode-container ${
-                theme === "light" ? "light" : "dark"
-              }`}
+              className={`mode-container ${theme === "light" ? "light" : "dark"
+                }`}
             >
               <span className="menu-icon" onClick={toggleMenu}>
                 <LuMenu />
               </span>
               {menu && (
                 <div
-                  className={`menu-container ${
-                    theme === "light" ? "light" : "dark"
-                  }`}
+                  className={`menu-container ${theme === "light" ? "light" : "dark"
+                    }`}
                 >
                   <div>
                     <span className="cross-icon" onClick={toggleMenu}>
@@ -99,14 +148,22 @@ function Header({ setProgress }) {
                   </div>
                   <div>
                     <ul
-                      className={`menu-navbar ${
-                        theme === "light" ? "light" : "dark"
-                      }`}
+                      className={`menu-navbar ${theme === "light" ? "light" : "dark"
+                        }`}
                     >
                       {routes.map((item, index) => {
                         return (
+                          // <li key={index}>
+                          //   <NavLink to={item.path}>{item.name}</NavLink>
+                          // </li>
+
                           <li key={index}>
-                            <NavLink to={item.path}>{item.name}</NavLink>
+                            <a
+                              onClick={() => scrollTo(item.path)}
+                              className={activeSection === item.path ? "active" : ""}
+                            >
+                              {item.name}
+                            </a>
                           </li>
                         );
                       })}
@@ -121,7 +178,6 @@ function Header({ setProgress }) {
           </div>
         </div>
       </header>
-      <Outlet />
     </>
   );
 }

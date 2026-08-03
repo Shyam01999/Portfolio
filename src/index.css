@@ -17,6 +17,20 @@
 
 html {
   font-size: 62.5%; /*1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; /* adjust to your header height */
+}
+
+#about,
+#skills,
+#projects,
+#education,
+#services,
+#contact {
+  scroll-margin-top: 80px;
 }
 
 body {

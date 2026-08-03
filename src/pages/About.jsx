@@ -18,9 +18,8 @@ function About({ setProgress }) {
       <div className="container grid grid-two-cols">
         <div className="hero-image">
           <div
-            className={`hero-image--cotainer ${
-              theme === "light" ? "light" : "dark"
-            }`}
+            className={`hero-image--cotainer ${theme === "light" ? "light" : "dark"
+              }`}
           >
             <img src={profileImage} alt="Image not available" width="50%" />
           </div>
@@ -28,7 +27,9 @@ function About({ setProgress }) {
         <div
           className={`about-content ${theme === "light" ? "light" : "dark"}`}
         >
-          <h2 className="title">About Me</h2>
+          <div className="common-title-container">
+             <h2 className="title" >About <span className='section-name'>Me</span></h2>
+          </div>
           <p className="description">
             Dedicated web developer with a creative flair for developing
             interactive and virtually appealing websites committed to delivering

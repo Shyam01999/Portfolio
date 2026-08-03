@@ -3,7 +3,7 @@ import { educationData } from '../constant/educationData';
 
 function Education() {
   return (
-    <section id="education" className='education-section'>
+    <section className='education-section'>
       <div className='container'>
 
         <div className="common-title-container">

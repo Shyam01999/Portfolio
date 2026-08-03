@@ -10,10 +10,17 @@ import {
   FaWhatsappSquare,
 } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import About from "./About";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import Education from "./Education";
+import Services from "./Services";
+import Contact from "./Contact";
 // import { FaFacebook, FaInstagramSquare, FaWhatsappSquare, FaLinkedin } from "react-icons/fa";
 // import { IoIosMail } from "react-icons/io";
 
 function Home({ setProgress }) {
+  
   const theme = useSelector((state) => state.themeReducer.theme);
 
   useEffect(() => {
@@ -78,7 +85,7 @@ function Home({ setProgress }) {
   return (
     <>
       {/*Home Section*/}
-      <section className="hero-section">
+      <section id="home" className="hero-section">
         <div className="container grid grid-two-cols">
           <div className={`hero-content ${theme === "light" ? "light" : "dark"}`} >
             <p className="intro-greet">Hello My name is</p>
@@ -168,6 +175,38 @@ function Home({ setProgress }) {
           </div>
         </div>
       </section >
+
+      {/*About Section*/}
+      <section id="about">
+        <About setProgress={setProgress} />
+      </section>
+
+      {/*Skills Section*/}
+      <section id="skills">
+        <Skills setProgress={setProgress} />
+      </section>
+
+      {/*Projects Section*/}
+      <section id="projects">
+        <Projects setProgress={setProgress} />
+      </section>
+
+      {/*Education Section*/}
+      <section id="education">
+        <Education setProgress={setProgress} />
+      </section>
+
+      {/*Services Section*/}
+      <section id="services">
+        <Services setProgress={setProgress} />
+      </section>
+
+      {/*Contact Section*/}
+      <section id="contact">
+        <Contact setProgress={setProgress} />
+      </section>
+
+
     </>
   );
 }
