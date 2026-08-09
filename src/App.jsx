@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Portfolio">
         <LoadingBar
           color={themecolor}
           progress={progress}
